@@ -1,0 +1,7 @@
+<h3>post show</h3>
+<p><%= @post.title %></p>
+<p><%= @post.text %></p>
+
+<%= link_to '编辑', edit_post_path %>
+<%= link_to '删除', post_path, method: :delete, data: { confirm: '确定删除？'} %>
+<%= link_to '返回', posts_path %>

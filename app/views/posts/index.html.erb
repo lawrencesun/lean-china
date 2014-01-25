@@ -1,0 +1,9 @@
+<h3>All Posts</h3>
+<% @post.each do |post| %>
+	<p>
+		<%= link_to "#{post.title}", post_path(post) %><br>
+		<%= post.text %><br>
+	</p>
+<% end %>
+
+<%= link_to '发布新帖', new_post_path %>
