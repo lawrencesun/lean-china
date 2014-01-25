@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
+	
 	def index
 		@post = Post.all
 	end
 
 	def show
 		@post = Post.find(params[:id])
+		@comment = Comment.new
 	end
 
 	def new
@@ -15,7 +17,7 @@ class PostsController < ApplicationController
 		@post = Post.new(post_params)
 
 		if @post.save
-			flash[:success] = '创建成功.'
+			flash[:success] = "创建成功"
 			redirect_to @post
 		else
 			render 'new'
@@ -30,7 +32,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 
 		if @post.update(params[:post].permit(:title, :text))
-			flash[:success] = '更新成功.'
+			flash[:success] = "更新成功"
 			redirect_to @post
 		else 
 			render 'edit'
