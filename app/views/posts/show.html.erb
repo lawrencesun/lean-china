@@ -1,28 +1,45 @@
-<div class="well">
-	<h3><%= @post.title %></h3>
-	<p><%= @post.text %></p>
-</div>
 
-<div class="well">	
-<h4>评论</h4>
-<% @post.comments.each do |c| %>
-	<p><%= c.body %></p>
-<% end %>
-</div>
+<div class="container">
+	<div class="row">
+		<div class="span9">
+			<div class="well">
+				<h3><%= @post.title %></h3><hr>
+				<p><%= @post.text %></p>
+			</div>
 
-
-
-<div class="well">
-	<%= form_for [@post, @comment] do |f| %>
-		<%= render 'shared/error', object: @comment %>
-		<div class="control-group">
-			<%= f.text_area :body, rows: 5, class: 'span6' %>
+			<div class="well">
+				<% if @post.comments.any? %>
+					<% @post.comments.each do |c| %>
+						<p><%= c.body %></p>
+					<% end %>
+				<% end %>
+				<hr>
+				<%= form_for [@post, @comment] do |f| %>
+					<%= render 'shared/error', object: @comment %>
+					<div class="control-group">
+						<%= f.text_area :body, rows: 5, class: "input-block-level" %>
+					</div>
+					<%= f.submit '发表评论', class: "btn btn-primary"%>
+				<% end %>
+			</div>
 		</div>
-		<%= f.submit '发表评论' %>
-	<% end %>
+
+  	<div class="span3">
+  		<div class="well">
+  			sideb<br>ar
+  			dajfiq<br>
+  			qeqi<br>ojqopij<br>fio<br>jio<br>qjw<br>efoiqoin<br>
+  			dafq<br>
+  		</div>
+  	</div>
+	</div>
 </div>
 
-<%= link_to '编辑', edit_post_path(@post) %> |
-<%= link_to '删除', post_path(@post), method: :delete, data: { confirm: '确定删除？'} %> |
-<%= link_to '返回', posts_path(@post) %>
+
+
+
+			<%= link_to '编辑', edit_post_path(@post) %> |
+			<%= link_to '删除', post_path(@post), method: :delete, data: { confirm: '确定删除？'} %> |
+			<%= link_to '返回', posts_path(@post) %>
+
 

@@ -1,9 +1,28 @@
 <h3>All Posts</h3>
-<% @post.each do |post| %>
-	<p>
-		<%= link_to "#{post.title}", post_path(post) %><br>
-		<%= post.text %><br>
-	</p>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="span9">
+			<div class="well">
+				<% @post.each do |post| %>
+					<p>
+						<%= link_to "#{post.title}", post_path(post) %><br>
+						<hr>
+					</p>
+				<% end %>
+			</div>
+		</div>
 
-<%= link_to '发布新帖', new_post_path %>
+		<div class="span3">
+			sidebar<br>
+			<a href="/posts/new", class="btn btn-success">发布新帖</a>
+		</div>
+
+
+	</div>
+</div>
+
+
+
+
+
+

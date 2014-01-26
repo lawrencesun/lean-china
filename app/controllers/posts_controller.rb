@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 		@post = Post.new(post_params)
 
 		if @post.save
-			flash[:success] = "创建成功"
+			flash[:success] = "发布成功"
 			redirect_to @post
 		else
 			render 'new'
