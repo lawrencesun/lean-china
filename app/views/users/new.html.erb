@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+		<div class="span9">
+			<div class="well">
+				<%= render 'shared/error', object: @user %>
+				<div class="offset3">
+					<%= render 'form' %>
+				</div>
+			</div>
+		</div>
+
+		<div class="span3">
+			<div class="well">
+				<h7>已有账号？</h7><br/>
+				<%= link_to "登录", '/signin', class: "btn btn-success" %>
+			</div>
+		</div>
+	</div>
+</div>

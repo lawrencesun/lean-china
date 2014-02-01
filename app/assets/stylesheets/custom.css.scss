@@ -65,7 +65,7 @@ p {
 	font-weight: bold;
 	line-height: 1;
 	&:hover{
-		color: #000;
+		color: #a6a6a6;
 		text-decoration: none;
 	}
 }
@@ -94,4 +94,18 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+/* forms */
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+.field_with_errors {
+	display: inline;
+  @extend .control-group;
+  @extend .error;
 }

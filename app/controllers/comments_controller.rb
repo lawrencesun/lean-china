@@ -1,9 +1,6 @@
 class CommentsController < ApplicationController	
 	before_action :get_post
 
-	def new
-	end
-
 	def create
 		@comment = @post.comments.build(comment_params)
 		if @comment.save

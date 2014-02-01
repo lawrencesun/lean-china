@@ -1,16 +1,16 @@
-<header class="navbar navbar-fixed-top" >
+<header class="navbar navbar-fixed-top navbar-inverse" >
 	<div class="navbar-inner">
 		<div class="container">
 			<%= link_to '创业汇', root_path, id: "logo" %>
 				<nav>
 					<ul class="nav nav-pills">
-						<li class="active"><%= link_to '主页',    root_path %></li>
+						<li><%= link_to '主页',    root_path %></li>
 						<li><%= link_to '分类浏览',   '#'%></li>
 						<li><%= link_to '关于', '#'%></li>
 					</ul>
 					<ul class="nav pull-right">
-						<li><%= link_to '注册', '#' %></li>
-        		<li><%= link_to '登录', '#' %></li>
+						<li><%= link_to '注册', '/signup' %></li>
+        		<li><%= link_to '登录', '/signin' %></li>
       		</ul>
 				</nav>
 		</div>
