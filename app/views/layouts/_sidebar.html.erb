@@ -1,0 +1,12 @@
+<% if signed_in? %>
+	<div class="well well-small">
+		<a href="/posts/new", class="btn btn-success">发布新帖</a>
+	</div>
+<% end %>
+
+<div class="well well-small">
+ 	<%= form_tag(posts_path, method: 'get', id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], class: "form-control input-block-level", placeholder: "搜索标题..." %>
+		<%= submit_tag "搜索", class: "btn btn-primary", name: nil %>
+	<% end %>
+</div>

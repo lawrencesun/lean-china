@@ -6,9 +6,12 @@ class Post < ActiveRecord::Base
 
 
 	validates :title, presence: true, 
-										uniqueness: true,
-										length: { minimum: 5}
+										uniqueness: true
 	validates :text, presence: true
 
+	def self.search(query)
+		# where(:title, query) -> This would return an exact match of the query
+		where("title like ?", "%#{query}%")
+	end
 
 end

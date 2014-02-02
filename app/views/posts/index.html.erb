@@ -13,8 +13,16 @@
 		</div>
 
 		<div class="span3">
-			sidebar<br>
-			<a href="/posts/new", class="btn btn-success">发布新帖</a>
+			<%= render 'layouts/sidebar' %>
+			<div class="well well-small">
+				<small><strong>本站统计</strong><br>
+				<ul>
+					<li>用户：<%= User.count %></li>
+					<li>文章：<%= Post.count %></li>
+					<li>评论：<%= Comment.count %></li>
+				</ul>
+				</small>
+			</div>
 		</div>
 
 

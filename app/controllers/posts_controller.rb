@@ -3,7 +3,11 @@ class PostsController < ApplicationController
 	before_action :require_user, except:[:index, :show]
 
 	def index
-		@post = Post.all
+		if params[:search]
+			@post = Post.search(params[:search])
+		else
+			@post = Post.all
+		end
 	end
 
 	def show
