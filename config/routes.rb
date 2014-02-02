@@ -3,7 +3,7 @@ StartupDigest::Application.routes.draw do
 	get  	'/signup', to: 'users#new'
 	get		'/signin', to: 'sessions#new'
 	post 	'/signin', to: 'sessions#create'
-	delete '/signout', to: 'sessions#delete'
+	get '/signout', to: 'sessions#destroy'
 
 	resources :users
 

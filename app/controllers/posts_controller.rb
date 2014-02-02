@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 	before_action :find_post, only:[:show, :edit, :update, :destroy]
-	
+	before_action :require_user, except:[:index, :show]
+
 	def index
 		@post = Post.all
 	end
@@ -15,9 +16,9 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-
+		@post.user = current_user
 		if @post.save
-			flash[:success] = "发布成功"
+			flash[:success] = "发布成功."
 			redirect_to @post
 		else
 			render 'new'
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
 
 	def update
 		if @post.update(params[:post].permit(:title, :text))
-			flash[:success] = "更新成功"
+			flash[:success] = "更新成功."
 			redirect_to @post
 		else 
 			render 'edit'
