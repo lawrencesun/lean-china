@@ -8,10 +8,11 @@
 						<li class = "dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 分类浏览 <b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><%= link_to '1', '#' %></li>
-									<li><%= link_to '2', '#' %></li>
+									<% @categories.each do |cat| %>
+										<li><%= link_to cat.name, category_path(cat) %></li>					
+									<% end %>									
 									<li class="divider"></li>
-									<li><%= link_to '3', signout_path %></li>
+									<li><%= link_to '创建目录', new_category_path %></li>
 								</ul>
 						</li>
 						<li><%= link_to '百宝箱', '#' %></li>

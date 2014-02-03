@@ -2,17 +2,21 @@
 
 /* universal */
 
+
 html {
 	overflow-y: scroll;
 }
 
 body {
-	padding-top: 60px;
+ padding-top: 60px;
 }
+
 
 section {
 	overflow: auto;
 }
+
+
 
 textarea {
 	resize: vertical;
@@ -27,6 +31,10 @@ textarea {
 
 .well {
    background-color: rgba(245, 245, 245, 0.4);
+}
+
+.badge {
+	background-color: $blue;
 }
 
 
@@ -112,4 +120,9 @@ footer {
 	display: inline;
   @extend .control-group;
   @extend .error;
+}
+
+/* timestamp */
+.timestamp {
+  color: $grayLight;
 }

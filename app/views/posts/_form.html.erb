@@ -12,7 +12,12 @@
 		<%= f.text_area :text, rows: 10, class: "input-block-level" %>
 		</div>
 
+		<div class='control-group'>
+     <%= f.label "选择目录" %>
+     <%= f.select :category_ids, Category.all.collect{|c| [c.name, c.id]}, {}, {multiple: false} %>
+    </div>
+
 		<%= f.submit(@post.new_record? ? "发布" : "更新", class: "btn btn-primary") %>
 	<% end %>
-	<%= link_to '取消', posts_path(@post) %>
+	<%= link_to '取消发布', posts_path(@post) %>
 </div>

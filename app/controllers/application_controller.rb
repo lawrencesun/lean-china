@@ -18,5 +18,7 @@ class ApplicationController < ActionController::Base
   	end
   end
 
-  
+  def get_categories
+    @categories = Category.all
+  end
 end

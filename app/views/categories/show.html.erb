@@ -1,21 +1,22 @@
-<h3>All Posts</h3><hr>
+<h3><%= @category.name %></h3><hr>
 <div class="container">
 	<div class="row">
 		<div class="span9">
 			<div class="well">
-				<% @posts.reverse.each do |post| %>
+				<% @category.posts.reverse.each do |post| %>
 					<p>
 						<span class="badge pull-right"><%= post.comments.count %></span>
 						<%= link_to "#{post.title}", post_path(post) %><br>
 						<% post.categories.each do |category| %>
-      			<%= link_to category.name, category_path(category), class: "label" %>
+      				<%= link_to category.name, category_path(category), class: "label" %>
       			<% end %>
+      			<span class="timestamp">
 							<small>posted by <% unless post.user.blank? %>
 								<%= link_to post.user.username, user_path(post.user) %>
 								<% end %>
 								<%= time_ago_in_words(post.created_at)%> ago 
 							</small>
-
+						</span>
 						<hr>
 					</p>
 				<% end %>
@@ -24,23 +25,8 @@
 
 		<div class="span3">
 			<%= render 'layouts/sidebar' %>
-			<div class="well well-small">
-				<small><strong>本站统计</strong><br>
-				<ul>
-					<li>用户：<%= User.count %></li>
-					<li>文章：<%= Post.count %></li>
-					<li>评论：<%= Comment.count %></li>
-				</ul>
-				</small>
-			</div>
 		</div>
 
 
 	</div>
 </div>
-
-
-
-
-
-

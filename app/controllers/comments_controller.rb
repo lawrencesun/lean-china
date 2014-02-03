@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController	
 	before_action :get_post
 	before_action :require_user
+	before_action :get_categories
 
 	def create
 		@comment = @post.comments.build(comment_params)

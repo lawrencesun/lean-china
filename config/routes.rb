@@ -13,6 +13,8 @@ StartupDigest::Application.routes.draw do
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
 
+  resources :categories
+
 
   root to: 'posts#index'
 end

@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+	before_action :get_categories
+
 	def new
 	end
 

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-	
+	before_action :get_categories
+
 	def new
 		@user = User.new
 	end

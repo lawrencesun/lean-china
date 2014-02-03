@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
 	before_action :find_post, only:[:show, :edit, :update, :destroy]
 	before_action :require_user, except:[:index, :show]
+	before_action :get_categories
 
 	def index
 		if params[:search]
-			@post = Post.search(params[:search])
+			@posts = Post.search(params[:search])
 		else
-			@post = Post.all
+			@posts = Post.all
 		end
 	end
 
@@ -33,7 +34,7 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		if @post.update(params[:post].permit(:title, :text))
+		if @post.update(params[:post].permit!)
 			flash[:success] = "更新成功."
 			redirect_to @post
 		else 
@@ -52,6 +53,6 @@ class PostsController < ApplicationController
 		end
 
 		def post_params
-			params.require(:post).permit(:title, :text)
+			params.require(:post).permit!
 		end
 end

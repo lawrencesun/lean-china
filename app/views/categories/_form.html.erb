@@ -1,0 +1,14 @@
+<%= render 'shared/error', object: @category %>
+<div class="well">
+	<div class="offset3">
+	<%= form_for @category do |f| %>
+		<div class="control-group">
+			<%= f.label "新的分类目录" %>
+			<%= f.text_field :name %>
+		</div>
+		<div class="control-group">
+			<%= f.submit "创建", class: "btn btn-primary" %>
+		</div>
+	<% end %>
+	</div>
+</div>
