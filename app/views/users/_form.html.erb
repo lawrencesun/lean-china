@@ -18,6 +18,6 @@
 			<%= f.label :password_confirmation, "确认密码" %>
 			<%= f.password_field :password_confirmation %>
 		</div>
-
-		<%= f.submit "注册", class: "btn btn-primary"%> 
+		
+		<%= f.submit(@user.new_record? ? "注册" : "更新", class: "btn btn-primary") %>
 	<% end %>

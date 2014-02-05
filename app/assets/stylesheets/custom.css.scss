@@ -126,3 +126,15 @@ footer {
 .timestamp {
   color: $grayLight;
 }
+
+/* gravatar */
+.gravatar-sm {
+	margin-right: 10px;
+	height:48px;
+	width:48px;
+}
+
+.gravatar-normal {
+	height:64px;
+	width:64px;
+}

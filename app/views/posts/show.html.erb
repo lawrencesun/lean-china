@@ -3,6 +3,7 @@
 	<div class="row">
 		<div class="span9">
 			<div class="well">
+				<span class="gravatar-normal pull-right"><%= gravatar_for @post.user %></span>
 				<h3><%= @post.title %></h3>
 				<% @post.categories.each do |category| %>
       			<%= link_to category.name, category_path(category), class: "label" %>
@@ -10,19 +11,16 @@
 							<small>posted by <% unless @post.user.blank? %>
 								<%= link_to @post.user.username, user_path(@post.user) %>
 								<% end %>
-								<%= time_ago_in_words(@post.created_at)%> ago 
+								on <%= @post.created_at.to_date %> 
 							</small>
 				<hr>
 				<p><%= @post.text %></p>
 			</div>
 
-			<div class="well">
-				<% if @post.comments.any? %>
-					<% @post.comments.each do |c| %>
-						<p><%= c.body %></p>
-					<% end %>
-				<% end %>
-				<hr>
+			<div class="well well small">
+				<div>
+					<%= render 'shared/comments', object: @post %>
+				</div>
 				<%= form_for [@post, @comment] do |f| %>
 					<%= render 'shared/error', object: @comment %>
 					<div class="control-group">

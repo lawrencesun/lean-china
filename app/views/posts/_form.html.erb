@@ -13,7 +13,7 @@
 		</div>
 
 		<div class='control-group'>
-     <%= f.label "选择目录" %>
+     <%= f.label "选择节点" %>
      <%= f.select :category_ids, Category.all.collect{|c| [c.name, c.id]}, {}, {multiple: false} %>
     </div>
 

@@ -1,0 +1,41 @@
+<div>
+	<span class="pull-right"><%= gravatar_for @user %></span>
+	<div class="center">
+		<h1><%= @user.username %></h1><br>
+		<small><em>since <%= @user.created_at.to_date %></em></small>
+	</div>
+	<hr>
+</div>
+
+
+<div class="container">
+<div class="row">
+	<div class="span6" %>
+		<div class="well well-small">	
+			<h4>文章</h4><hr>
+			<div>
+				<%= render 'shared/posts' , object: @posts%>
+			</div>
+		</div>
+	</div>
+
+	<div class="span6">
+		<div class="well well-small">
+		<h4>评论</h4><hr>
+			<div>
+				<% if @user.comments.any? %>
+					<% @user.comments.reverse.each do |comment| %>
+						<p><%= link_to comment.body, post_path(comment.post_id) %><br>
+						<span class="timestamp">
+							<small>posted by <%= link_to comment.user.username, user_path(comment.user) %> <%= time_ago_in_words(comment.created_at) %> ago</small>
+						</span>
+						<hr>
+						</p>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>

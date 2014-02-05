@@ -3,22 +3,7 @@
 	<div class="row">
 		<div class="span9">
 			<div class="well">
-				<% @posts.reverse.each do |post| %>
-					<p>
-						<span class="badge pull-right"><%= post.comments.count %></span>
-						<%= link_to "#{post.title}", post_path(post) %><br>
-						<% post.categories.each do |category| %>
-      			<%= link_to category.name, category_path(category), class: "label" %>
-      			<% end %>
-							<small>posted by <% unless post.user.blank? %>
-								<%= link_to post.user.username, user_path(post.user) %>
-								<% end %>
-								<%= time_ago_in_words(post.created_at)%> ago 
-							</small>
-
-						<hr>
-					</p>
-				<% end %>
+				<%= render 'shared/posts', object: @posts %>
 			</div>
 		</div>
 

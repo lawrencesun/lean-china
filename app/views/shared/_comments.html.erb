@@ -1,0 +1,16 @@
+<% if object.comments.any? %>
+	<% object.comments.each do |comment| %>
+		<% unless comment.body.blank? %>
+			<span class="gravatar-sm pull-left"><%= gravatar_for comment.user %></span>
+			<p>
+			<small>
+				<%= link_to comment.user.username, user_path(comment.user) %>
+				<span class="timestamp">
+				<%= time_ago_in_words(comment.created_at) %> ago
+				</span>
+			</small><br>
+			<%= comment.body %>
+			</p><hr>
+		<% end %>
+	<% end %>
+<% end %>
