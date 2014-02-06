@@ -10,7 +10,14 @@ StartupDigest::Application.routes.draw do
 	resources :users
 
   resources :posts do
-    resources :comments, only: [:create, :edit, :update, :destroy]
+  	member do 
+  		post 'like'
+  	end
+    resources :comments, only: [:create, :edit, :update, :destroy] do
+    	member do
+    		post 'like'
+    	end
+    end
   end
 
   resources :categories

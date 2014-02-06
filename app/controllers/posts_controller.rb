@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :find_post, only:[:show, :edit, :update, :destroy]
+	before_action :find_post, only:[:show, :edit, :update, :destroy, :like]
 	before_action :require_user, except:[:index, :show]
 	before_action :correct_user, only:[:edit, :destroy]
 	
@@ -46,6 +46,19 @@ class PostsController < ApplicationController
 	def destroy
 		@post.destroy
 		redirect_to @post
+	end
+
+	def like
+		Like.create(likeable: @post, user: current_user, like: params[:like])
+		
+		respond_to do |format|
+			format.html do
+				flash[:success] = "Like Counted!"
+				redirect_to :back
+			end
+
+			format.js
+		end			
 	end
 
 	private
