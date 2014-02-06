@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 	before_action :find_post, only:[:show, :edit, :update, :destroy]
 	before_action :require_user, except:[:index, :show]
-	before_action :get_categories
+	before_action :correct_user, only:[:edit, :destroy]
+	
 
 	def index
 		if params[:search]
@@ -54,5 +55,10 @@ class PostsController < ApplicationController
 
 		def post_params
 			params.require(:post).permit!
+		end
+
+		def correct_user
+			@post = Post.find(params[:id])
+			redirect_to @post unless correct_user?(@post.user)
 		end
 end

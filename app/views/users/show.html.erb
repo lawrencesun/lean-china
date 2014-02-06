@@ -2,7 +2,7 @@
 	<span class="pull-right"><%= gravatar_for @user %></span>
 	<div class="center">
 		<h1><%= @user.username %></h1><br>
-		<small><em>since <%= @user.created_at.to_date %></em></small>
+		<small><em>since <%= display_date(@user.created_at) %></em></small>
 	</div>
 	<hr>
 </div>

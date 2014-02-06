@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-	before_action :get_categories
 	before_action :require_user, only:[:edit, :update]
+	before_action :correct_user, only:[:edit, :update]
 	before_action :find_user, only:[:show, :edit, :update]
 
 	def new
@@ -45,4 +45,9 @@ class UsersController < ApplicationController
 		def find_user
 			@user = User.find(params[:id])
 		end
+
+		def correct_user
+    	@user = User.find(params[:id])
+    	redirect_to root_path unless correct_user?(@user)
+  	end
 end

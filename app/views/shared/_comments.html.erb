@@ -1,7 +1,7 @@
 <% if object.comments.any? %>
 	<% object.comments.each do |comment| %>
 		<% unless comment.body.blank? %>
-			<span class="gravatar-sm pull-left"><%= gravatar_for comment.user %></span>
+			<span class="gravatar-sm pull-left"><%= link_to (gravatar_for comment.user), user_path(comment.user) %></span>
 			<p>
 			<small>
 				<%= link_to comment.user.username, user_path(comment.user) %>

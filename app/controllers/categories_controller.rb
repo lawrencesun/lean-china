@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-	before_action :get_categories
 
 	def index
 	end
