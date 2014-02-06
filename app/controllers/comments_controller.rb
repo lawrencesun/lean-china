@@ -14,8 +14,21 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
-
 	end 
+
+	def like
+		@comment = Comment.find(params[:id])
+		Like.create(likeable: @comment, user: current_user, like: params[:like])
+		
+		respond_to do |format|
+			format.html do
+				flash[:success] = "Like Counted!"
+				redirect_to :back
+			end
+
+			format.js
+		end
+	end
 
 	private
 		def get_post
