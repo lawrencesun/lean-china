@@ -5,6 +5,9 @@ StartupDigest::Application.routes.draw do
 	post 	'/signin', to: 'sessions#create'
 	get '/signout', to: 'sessions#destroy'
 
+  get '/about', to: 'static_pages#about'
+  get '/tools', to: 'static_pages#tools'
+
 	get '/search', to: 'search#index'
 
 	resources :users
