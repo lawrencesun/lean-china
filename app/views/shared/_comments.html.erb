@@ -8,7 +8,6 @@
 					<i class="icon-thumbs-up"></i>
 				<% end %>
 				<span id="comment_<%= comment.id %>_likes"><%= comment.likes.size %></span>
-
 			</span>
 
 			<p>			
@@ -18,7 +17,7 @@
 				<%= time_ago_in_words(comment.created_at) %> ago
 				</span>
 			</small><br>
-			<%= comment.body %>
+			<%= markdown(comment.body) %>
 			</p><hr>
 		<% end %>
 	<% end %>
