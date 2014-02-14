@@ -29,6 +29,7 @@
 				<div>
 					<%= render 'shared/comments', object: @post %>
 				</div>
+				<br/>
 				<%= form_for [@post, @comment] do |f| %>
 					<%= render 'shared/error', object: @comment %>
 					<div class="control-group">

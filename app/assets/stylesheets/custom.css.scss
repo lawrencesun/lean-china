@@ -138,3 +138,28 @@ footer {
 	height:64px;
 	width:64px;
 }
+
+/* comments */
+table.comments {
+  width: 100%;
+
+  tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  td {
+    padding: 10px;
+    vertical-align: top;
+
+    &.avatar {
+      width: 48px;
+      height: 48px;
+      padding-right: 0;
+      line-height: 0;
+    }
+
+    &.content {
+      word-break: break-word;
+    }
+	}
+}
