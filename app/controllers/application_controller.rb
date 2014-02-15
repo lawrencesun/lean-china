@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :signed_in?, :correct_user?
+  helper_method :current_user, :signed_in?, :correct_user?, :admin?
   before_action :get_categories
 
   def current_user
@@ -25,5 +25,16 @@ class ApplicationController < ActionController::Base
 
   def get_categories
     @categories = Category.all
+  end
+
+  def admin_user
+    unless admin?
+      flash[:error] = "请联系管理员."
+      redirect_to root_path
+    end
+  end
+
+  def admin?
+    signed_in? && current_user.admin?
   end
 end

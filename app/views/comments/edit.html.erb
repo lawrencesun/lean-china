@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">
+		<div class="span9">
+			<%= form_for [@post, @comment] do |f| %>
+				<%= render 'shared/error', object: @comment %>
+				<div class="control-group">
+					<%= f.text_area :body, rows: 10, class: "input-block-level" %>
+				</div>
+					<%= f.submit '更新', class: "btn btn-success"%>
+			<% end %>
+		</div>
+		<div class="span3">
+			<%= render 'shared/mdhelp' %>
+		</div>
+	</div>
+</div>

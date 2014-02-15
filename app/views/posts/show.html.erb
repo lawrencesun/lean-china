@@ -41,13 +41,14 @@
 		</div>
 
   	<div class="span3">
-  		<% if correct_user?(@post.user) %>
+  		<% if correct_user?(@post.user) || admin? %>
 	  		<div class="well well-small">
 	 				<%= link_to '编辑', edit_post_path(@post), class: "btn btn-info" %> |
 					<%= link_to '删除', post_path(@post), method: :delete, data: { confirm: '确定删除？'}, class: "btn btn-danger" %> 
 				</div>
 			<% end %>
   		<%= render 'layouts/sidebar'%>
+  		<%= render 'shared/mdhelp'%>
   	</div>
 	</div>
 </div>

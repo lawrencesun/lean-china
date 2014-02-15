@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
-	before_action :require_user, only:[:edit, :update]
+	before_action :require_user, only:[:edit, :update, :destroy]
 	before_action :correct_user, only:[:edit, :update]
-	before_action :find_user, only:[:show, :edit, :update]
+	before_action :find_user, only:[:show, :edit, :update, :destroy]
+	before_action :admin_user, only: [:destroy, :index]
+
+	def index
+		@users = User.all
+	end
 
 	def new
 		@user = User.new
@@ -34,6 +39,12 @@ class UsersController < ApplicationController
 			render 'edit'
 		end
 	end 
+
+	def destroy
+		@user.destroy
+		flash[:success] = "删除用户."
+		redirect_to users_path
+	end
 
 
 	private

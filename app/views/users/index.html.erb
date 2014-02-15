@@ -1,0 +1,12 @@
+<ul>
+<% @users.reverse.each do |user| %>
+	<li>
+		<p><%= link_to user.username, user %>,
+			<%= user.email%>
+		(<%= link_to 'delete', user_path(user), method: 'delete', data: { confirm: 'You sure?'} %>)
+		</p>
+	</li>
+
+<% end %>
+
+</ul>

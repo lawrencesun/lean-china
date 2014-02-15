@@ -15,6 +15,21 @@
 								<i class="icon-thumbs-up"></i>
 							<% end %>
 							<span id="comment_<%= comment.id %>_likes"><%= comment.likes.size %></span>
+
+							<% if correct_user?(comment.user) %>
+								<span>	
+									<%= link_to edit_post_comment_path(comment.post.id, comment.id) do %>
+									<i class="icon-edit"></i>
+									<% end %>
+								</span>
+							<% end %>
+									
+							<% if admin? %>
+								<span>	
+									<%= link_to 'delete', post_comment_path(comment.post.id, comment.id), method: 'delete', data: { confirm: '确定删除?'} %>
+								</span>
+							<% end %>
+
 						</div>
 					
 						<div class="pull-left">
@@ -30,6 +45,9 @@
 						
 					<p><%= markdown(comment.body) %></p>
 				</td>				
+
+	
+
 			</tr>
 
 		</table>
