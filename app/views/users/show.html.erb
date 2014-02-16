@@ -15,16 +15,17 @@
 			<h4>文章</h4><hr>
 			<div>
 				<%= render 'shared/posts' , object: @posts%>
+				<%= paginate @posts %>
 			</div>
 		</div>
 	</div>
 
 	<div class="span6">
 		<div class="well well-small">
-		<h4>评论</h4><hr>
+		<h4>最新评论</h4><hr>
 			<div>
 				<% if @user.comments.any? %>
-					<% @user.comments.reverse.each do |comment| %>
+					<% @user.comments.reverse.take(10).each do |comment| %>
 						<p><%= link_to markdown(comment.body), post_path(comment.post_id) %><br>
 						<span class="timestamp">
 							<small>posted by <%= link_to comment.user.username, user_path(comment.user) %> <%= time_ago_in_words(comment.created_at) %> ago</small>
@@ -32,6 +33,7 @@
 						<hr>
 						</p>
 					<% end %>
+
 				<% end %>
 			</div>
 		</div>

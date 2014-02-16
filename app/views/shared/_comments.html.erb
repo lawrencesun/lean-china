@@ -1,5 +1,5 @@
-<% if object.comments.any? %>
-	<% object.comments.each do |comment| %>
+<% if object.any? %>
+	<% object.each do |comment| %>
 		<% unless comment.body.blank? %>
 		<table class="comments">
 

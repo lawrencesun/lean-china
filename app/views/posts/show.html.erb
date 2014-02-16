@@ -27,7 +27,8 @@
 
 			<div class="well well-small">
 				<div>
-					<%= render 'shared/comments', object: @post %>
+					<%= render 'shared/comments', object: @comments %>
+					<%= paginate @comments %>
 				</div>
 				<br/>
 				<%= form_for [@post, @comment] do |f| %>

@@ -7,14 +7,15 @@ class PostsController < ApplicationController
 
 	def index
 		if params[:search]
-			@posts = Post.search(params[:search])
+			@posts = Post.search(params[:search]).order('created_at DESC').page(params[:page])
 		else
-			@posts = Post.all
+			@posts = Post.all.order('created_at DESC').page(params[:page])
 		end
 	end
 
 	def show
 		@comment = Comment.new
+		@comments = @post.comments.page(params[:page])
 	end
 
 	def new

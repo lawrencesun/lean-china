@@ -1,4 +1,4 @@
-<% object.reverse.each do |post| %>
+<% object.each do |post| %>
 	<p>
 		<span class="badge pull-right"><%= post.comments.count %></span>
 		<%= link_to "#{post.title}", post_path(post) %><br>
