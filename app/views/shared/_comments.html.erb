@@ -26,7 +26,7 @@
 									
 							<% if admin? %>
 								<span>	
-									<%= link_to 'delete', post_comment_path(comment.post.id, comment.id), method: 'delete', data: { confirm: '确定删除?'} %>
+									<%= link_to 'delete', post_comment_path(comment.post.id, comment.id), method: 'delete', data: { confirm: t('confirm_delete') } %>
 								</span>
 							<% end %>
 
@@ -36,7 +36,7 @@
 							<small>
 								<%= link_to comment.user.username, user_path(comment.user) %>
 								<span class="timestamp">
-									<%= time_ago_in_words(comment.created_at) %> ago
+									<%= time_ago_in_words(comment.created_at) %>
 								</span>
 							</small>
 						</div>

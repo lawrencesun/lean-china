@@ -1,11 +1,7 @@
 <footer class="footer">
 	<small>
-		©<%= link_to '创业汇', root_path %> -- 可能是最好的创业文摘
+		<%= link_to t('chuangyehui'), root_path %>
+		| <%= link_to 'About', about_path %>
+		| <%= link_to 'Github', 'https://github.com/lawrencesun/startup_digest' %>
 	</small>
-	<nav>
-		<ul>
-			<li><%= link_to 'About',    about_path %></li>
-			<li><%= link_to 'Github', 'https://github.com/lawrencesun/startup_digest' %></li>
-		</ul>
-	</nav>
 </footer>

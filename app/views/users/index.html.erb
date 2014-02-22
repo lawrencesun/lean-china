@@ -3,7 +3,7 @@
 	<li>
 		<p><%= link_to user.username, user %>,
 			<%= user.email%>
-		(<%= link_to 'delete', user_path(user), method: 'delete', data: { confirm: 'You sure?'} %>)
+		(<%= link_to 'delete', user_path(user), method: 'delete', data: { confirm: t('confirm_delete') } %>)
 		</p>
 	</li>
 

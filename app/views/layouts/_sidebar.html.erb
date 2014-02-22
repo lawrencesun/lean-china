@@ -1,16 +1,16 @@
 <div class="well well-small">
 	<% if signed_in? %>
-		<a href="/posts/new", class="btn btn-success">发布新帖</a>
+		<a href="/posts/new", class="btn btn-success"> <%= t('new_post')%></a>
 	<% else %>
-		<h8>参与发帖, 评论和点赞。</h8><hr>
-		<%= link_to '登录', signin_path, class: "btn btn-primary" %> |
-		<%= link_to '注册', signup_path, class: "btn btn-success" %>
+		<h8><%= t('.participate')%></h8><hr>
+		<%= link_to t('sign_in'), signin_path, class: "btn btn-primary" %> |
+		<%= link_to t('sign_up'), signup_path, class: "btn btn-success" %>
 	<% end %>
 </div>
 
 <div class="well well-small">
  	<%= form_tag(posts_path, method: 'get', id: "search-form") do %>
-		<%= text_field_tag :search, params[:search], class: "form-control input-block-level", placeholder: "搜索标题..." %>
-		<%= submit_tag "搜索", class: "btn btn-info", name: nil %>
+		<%= text_field_tag :search, params[:search], class: "form-control input-block-level", placeholder: "search title..." %>
+		<%= submit_tag t('search'), class: "btn btn-info", name: nil %>
 	<% end %>
 </div>

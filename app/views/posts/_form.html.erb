@@ -3,21 +3,20 @@
 		<%= render 'shared/error', object: @post %>
 		
 		<div class="control-group">
-		<%= f.label "标题" %>
+		<%= f.label t('.title') %>
 		<%= f.text_field :title, class: "input-block-level" %>
 		</div>
 
 		<div class="control-group">
-		<%= f.label "内容" %>
+		<%= f.label t('.content') %>
 		<%= f.text_area :text, rows: 10, class: "input-block-level" %>
 		</div>
 
 		<div class='control-group'>
-     <%= f.label "选择节点" %>
+     <%= f.label t('.select_category') %>
      <%= f.select :category_ids, Category.all.collect{|c| [c.name, c.id]}, {}, {multiple: false} %>
     </div>
 
-		<%= f.submit(@post.new_record? ? "发布" : "更新", class: "btn btn-primary") %>
+		<%= f.submit(@post.new_record? ? t('new') : t('update'), class: "btn btn-primary") %>
 	<% end %>
-	<%= link_to '取消发布', posts_path(@post) %>
 </div>

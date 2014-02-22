@@ -11,12 +11,12 @@
 
 		<div class="span3">
 			<div class="well">
-				<h7>已有账号？</h7><br/>
-				<%= link_to "登录", '/signin', class: "btn btn-success" %>
+				<h7><%= t('.already_have_an_account') %>?</h7><br/>
+				<%= link_to t('sign_in'), '/signin', class: "btn btn-success" %>
 			</div>
 			<div class="well">
-				<h7>小贴士：<br/>
-				<small>注册邮箱将关联Gravatar头像</small>
+				<h7><%= t('.tips') %>：<br/>
+				<small><%= t('.support_gravatar') %></small>
 				</h7>
 			</div>
 		</div>

@@ -19,139 +19,171 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
-  sign_out: "Sign out"
-  sign_up: "Sign up"
-  sign_in: "Sign in"
-  new_post: "New Post"
-  new_comment: "New Comment"
-  new_category: "New Category"
-  search: "Search"
-  username: "username"
-  email: "email"
-  password: "password"
-  password_confirmation: "password confirmation"
-  new: "New"
-  update: "Update"
-  edit: "Edit"
-  delete: "Delete"
-  confirm_delete: "confirm_delete"
-  likes: " Likes"
-  posted: ""
-  posted_on: "posted on"
-
-
+zh-CN:
+  chuangyehui: "创业汇"
+  sign_out: "退出"
+  sign_up: "注册"
+  sign_in: "登录"
+  new_post: "发布新帖"
+  new_comment: "发表评论"
+  new_category: "创建分类"
+  search: "搜索"
+  username: "用户名"
+  email: "邮箱"
+  password: "密码"
+  password_confirmation: "确认密码"
+  new: "发布"
+  update: "更新"
+  edit: "编辑"
+  delete: "删除"
+  confirm_delete: "确认删除"
+  likes: "人点赞"
+  posted: "发表"
+  posted_on: "发表于"
+  
 
   views:
     pagination:
-      previous: "&lt; Previous"
-      next: "Next &gt;"
+      previous: "&lt; 前一页"
+      next: "后一页 &gt;"
       truncate: "..."
+  
+
+
+
+  layouts:
+    header:
+      home: "首页"
+      categories: "分类浏览"
+      new_category: "创建分类"
+      tools: "百宝箱"
+      about: "关于"
+      my_profile: "我的主页"
+      setting: "设置"
+    sidebar:
+      participate: "参与发帖, 评论和点赞。"
+
+  users:
+    show:
+      articles: "文章"
+      recent_comments: "最新评论"
+    edit:
+      edit_gravatar: "修改头像"
+    new:
+      already_have_an_account: "已有账号"
+      tips: "小贴士"
+      support_gravatar: "注册邮箱将关联Gravatar头像"
+
+
+  sessions:
+    new:
+      no_account: "没有账号"
 
   posts:
+    index:
+      statistics: "本站统计"
+      users: "用户"
+      posts: "文章"
+      comments: "评论"
     form:
-      title: "Title"
-      content: "Content"
-      select_category: "Select category"
-
-
+      title: "标题"
+      content: "内容"
+      select_category: "选择分类"
+  
   date:
     abbr_day_names:
-    - Sun
-    - Mon
-    - Tue
-    - Wed
-    - Thu
-    - Fri
-    - Sat
+    - 日
+    - 一
+    - 二
+    - 三
+    - 四
+    - 五
+    - 六
     abbr_month_names:
     -
-    - Jan
-    - Feb
-    - Mar
-    - Apr
-    - May
-    - Jun
-    - Jul
-    - Aug
-    - Sep
-    - Oct
-    - Nov
-    - Dec
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
     day_names:
-    - Sunday
-    - Monday
-    - Tuesday
-    - Wednesday
-    - Thursday
-    - Friday
-    - Saturday
-    formats:
-      default: '%Y-%m-%d'
-      long:  '%B %d, %Y'
-      short:  '%b %d'
+    - 周日
+    - 周一
+    - 周二
+    - 周三
+    - 周四
+    - 周五
+    - 周六
+
     month_names:
     -
-    - January
-    - February
-    - March
-    - April
-    - May
-    - June
-    - July
-    - August
-    - September
-    - October
-    - November
-    - December
+    - 一月
+    - 二月
+    - 三月
+    - 四月
+    - 五月
+    - 六月
+    - 七月
+    - 八月
+    - 九月
+    - 十月
+    - 十一月
+    - 十二月
     order:
     - :year
     - :month
     - :day
+
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: "大约1小时前"
+        other: "大约%{count}小时前"
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: "大约1月前"
+        other: "大约%{count}月前"
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: "大约1年"
+        other: "大约%{count}年前"
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
-      half_a_minute: half a minute
+        one: "接近1年"
+        other: "接近%{count}年"
+      half_a_minute: "半分钟"
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: "不到1分钟"
+        other: "不到%{count}分钟"
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
+        one: "不到1秒"
+        other: "不到%{count}秒前"
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: "1年多"
+        other: "%{count}年多"
       x_days:
-        one: 1 day
-        other: '%{count} days ago'
+        one: "1天前"
+        other: '%{count}天前'
       x_minutes:
-        one: 1 minute
-        other: '%{count} minutes ago'
+        one: "1分钟"
+        other: '%{count}分钟前'
       x_months:
-        one: 1 month
-        other: '%{count} months ago'
+        one: "1月前"
+        other: '%{count}月前'
       x_seconds:
-        one: 1 second
-        other: '%{count} seconds ago'
+        one: "1秒"
+        other: '%{count}秒'
     prompts:
-      day: Day
-      hour: Hour
-      minute: Minute
-      month: Month
-      second: Seconds
-      year: Year
+      day: "天"
+      hour: "时"
+      minute: "分"
+      month: "月"
+      second: "秒"
+      year: "年"
   errors: &errors
     format: '%{attribute} %{message}'
     messages:

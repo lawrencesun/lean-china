@@ -6,10 +6,10 @@
 	    <%= link_to category.name, category_path(category), class: "label" %>
 	  <% end %>
 	  <span class="timestamp">
-			<small>posted by <% unless post.user.blank? %>
-				<%= link_to post.user.username, user_path(post.user) %>
+			<small><% unless post.user.blank? %>
+				▪ <%= link_to post.user.username, user_path(post.user) %>
 				<% end %>
-				<%= time_ago_in_words(post.created_at)%> ago 
+				▪ <%= time_ago_in_words(post.created_at)%><%= t('posted') %> 
 			</small>
 		</span>
 		<hr>
