@@ -9,9 +9,9 @@
       			<%= link_to category.name, category_path(category), class: "label" %>
       			<% end %>
 							<small><% unless @post.user.blank? %>
-								<%= link_to @post.user.username, user_path(@post.user) %>
+								▪ <%= link_to @post.user.username, user_path(@post.user) %>
 								<% end %>
-								<%= t('posted_on') %> <%= display_date(@post.created_at) %> 
+								▪ <%= t('posted_on') %> <%= display_date(@post.created_at) %> 
 							</small>
 				<hr>
 				<p><%= markdown(@post.text) %></p>

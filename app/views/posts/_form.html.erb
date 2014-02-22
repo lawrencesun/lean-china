@@ -17,6 +17,6 @@
      <%= f.select :category_ids, Category.all.collect{|c| [c.name, c.id]}, {}, {multiple: false} %>
     </div>
 
-		<%= f.submit(@post.new_record? ? t('new') : t('update'), class: "btn btn-primary") %>
+		<%= f.submit(@post.new_record? ? t('new_post') : t('update'), class: "btn btn-primary") %>
 	<% end %>
 </div>

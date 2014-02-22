@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 		@post = Post.new(post_params)
 		@post.user = current_user
 		if @post.save
-			flash[:success] = "发布成功."
+			flash[:success] = t('flash.post.create')
 			redirect_to @post
 		else
 			render 'new'
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
 
 	def update
 		if @post.update(params[:post].permit!)
-			flash[:success] = "更新成功."
+			flash[:success] = t('flash.post.update')
 			redirect_to @post
 		else 
 			render 'edit'

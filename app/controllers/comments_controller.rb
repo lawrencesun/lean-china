@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 		@comment = @post.comments.build(comment_params)
 		@comment.user = current_user
 		if @comment.save
-			flash[:success] = "评论成功."
+			flash[:success] = t('flash.comment.create')
 			redirect_to @post
 		else 
 			render 'posts/show'
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
 
 	def update
 		if @comment.update(comment_params)
-			flash[:success] = "更新成功."
+			flash[:success] = t('flash.comment.update')
 			redirect_to @post
 		else 
 			render 'edit'
@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
 
 	def destroy
 		@comment.destroy
-		flash[:success] = "删除成功."
+		flash[:success] = t('flash.comment.destroy')
 		redirect_to @post
 	end 
 

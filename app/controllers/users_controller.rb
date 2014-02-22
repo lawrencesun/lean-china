@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			session[:user_id] = @user.id
-			flash[:success] = "注册成功."
+			flash[:success] = t('flash.user.create')
 			redirect_to root_path
 		else
 		  render 'new'
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
 	def update
 		if @user.update_attributes(user_params)
-			flash[:success] = "更新成功."
+			flash[:success] = t('flash.user.update')
 			redirect_to @user
 		else
 			render 'edit'
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
 	def destroy
 		@user.destroy
-		flash[:success] = "删除用户."
+		flash[:success] = t('flash.user.destroy')
 		redirect_to users_path
 	end
 

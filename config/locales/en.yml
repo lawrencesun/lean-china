@@ -28,15 +28,16 @@ en:
   new_comment: "New Comment"
   new_category: "New Category"
   search: "Search"
-  username: "username"
-  email: "email"
-  password: "password"
-  password_confirmation: "password confirmation"
+  username: "Username"
+  email: "Email"
+  password: "Password"
+  password_confirmation: "Password confirmation"
+  create: "Create"
   new: "New"
   update: "Update"
   edit: "Edit"
   delete: "Delete"
-  confirm_delete: "confirm_delete"
+  confirm_delete: "confirm delete"
   likes: " Likes"
   posted: ""
   posted_on: "posted on"
@@ -54,6 +55,28 @@ en:
       title: "Title"
       content: "Content"
       select_category: "Select category"
+
+  flash:
+    post:
+      create: "Posted successfully."
+      update: "Updated successfully."
+    category:
+      create: "Created successfully."
+    comment:
+      create: "Created successfully."
+      update: "Updated successfully."
+      destroy: "Deleted."
+    session:
+      create:
+        success: "Welcome back"
+        error: "Username or email address error"
+      destroy: "Signed out successfully."
+    user:
+      create: "Signed up successfully."
+      update: "Updated successfully."
+      destroy: "User deleted."
+      signin: "Please Sign in."
+      admin: "Please contact admin."
 
 
   date:

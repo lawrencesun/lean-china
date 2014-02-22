@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
 	def create
 		@category = Category.new(category_params)
 		if @category.save
-			flash[:success] = "创建目录成功."
+			flash[:success] = t('flash.category.create')
 			redirect_to root_path
 		else
 			render 'new'

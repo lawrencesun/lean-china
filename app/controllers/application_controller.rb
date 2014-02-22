@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
   	unless signed_in?
-  		flash[:error] = "请登录."
+  		flash[:error] = t('flash.user.signin')
   		redirect_to '/signin'
   	end
   end
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 
   def admin_user
     unless admin?
-      flash[:error] = "请联系管理员."
+      flash[:error] = t('flash.user.admin')
       redirect_to root_path
     end
   end
