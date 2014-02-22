@@ -26,6 +26,11 @@ class UsersController < ApplicationController
 
 	def show
 		@posts = @user.posts.order('created_at DESC').page(params[:page]).per(10)
+
+		respond_to do |format|
+			format.html 	
+			format.js
+		end
 	end
 
 	def edit

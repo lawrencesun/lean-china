@@ -1,0 +1,2 @@
+$("#posts").html("<%= escape_javascript render 'shared/posts', object: @posts %>");
+$("#paginator").html("<%= escape_javascript(paginate(@posts, remote: true).to_s) %>");

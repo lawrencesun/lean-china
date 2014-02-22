@@ -27,8 +27,12 @@
 
 			<div class="well well-small">
 				<div>
-					<%= render 'shared/comments', object: @comments %>
-					<%= paginate @comments %>
+					<div id="comments">
+						<%= render 'shared/comments', object: @comments %>
+					</div>
+					<div id="paginator">
+						<%= paginate @comments, remote: true %>
+					</div>
 				</div>
 				<br/>
 				<%= form_for [@post, @comment] do |f| %>

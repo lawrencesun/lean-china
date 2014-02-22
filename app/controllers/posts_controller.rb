@@ -11,11 +11,21 @@ class PostsController < ApplicationController
 		else
 			@posts = Post.all.order('created_at DESC').page(params[:page])
 		end
+
+		respond_to do |format|
+			format.html 	
+			format.js
+		end
 	end
 
 	def show
 		@comment = Comment.new
 		@comments = @post.comments.page(params[:page])
+
+		respond_to do |format|
+			format.html 	
+			format.js
+		end
 	end
 
 	def new

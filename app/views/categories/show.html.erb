@@ -3,8 +3,12 @@
 	<div class="row">
 		<div class="span9">
 			<div class="well">
-				<%= render 'shared/posts', object: @posts %>
-				<%= paginate @posts %>
+				<div id="posts">
+					<%= render 'shared/posts', object: @posts %>
+				</div>
+				<div id="paginator">
+					<%= paginate @posts, remote: true %>
+				</div>
 			</div>
 		</div>
 

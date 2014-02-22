@@ -14,8 +14,12 @@
 		<div class="well well-small">	
 			<h4>文章</h4><hr>
 			<div>
-				<%= render 'shared/posts' , object: @posts%>
-				<%= paginate @posts %>
+				<div id="posts">
+					<%= render 'shared/posts' , object: @posts%>
+				</div>
+				<div id="paginator">
+					<%= paginate @posts, remote: true %>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -28,7 +32,7 @@
 					<% @user.comments.reverse.take(10).each do |comment| %>
 						<p><%= link_to markdown(comment.body), post_path(comment.post_id) %><br>
 						<span class="timestamp">
-							<small>posted by <%= link_to comment.user.username, user_path(comment.user) %> <%= time_ago_in_words(comment.created_at) %> ago</small>
+							<small>posted <%= time_ago_in_words(comment.created_at) %> ago</small>
 						</span>
 						<hr>
 						</p>
