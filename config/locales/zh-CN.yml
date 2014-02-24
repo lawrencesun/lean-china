@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh-CN:
-  chuangyehui: "创业汇"
+  lean-china: "Lean China"
   sign_out: "退出"
   sign_up: "注册"
   sign_in: "登录"
@@ -61,6 +61,9 @@ zh-CN:
       about: "关于"
       my_profile: "我的主页"
       setting: "设置"
+    footer:
+      about: "关于"
+      contact: "联系"
     sidebar:
       participate: "参与发帖, 评论和点赞。"
 

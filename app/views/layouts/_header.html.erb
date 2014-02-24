@@ -1,7 +1,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse" >
 	<div class="navbar-inner">
 		<div class="container">
-			<%= link_to t('chuangyehui'), root_path, id: "logo" %>
+			<%= link_to t('lean-china'), root_path, id: "logo" %>
 				<nav>
 					<ul class="nav nav-pills">
 						<li><%= link_to t('.home'),    root_path %></li>
@@ -15,8 +15,9 @@
 									<li><%= link_to t('.new_category'), new_category_path %></li>
 								</ul>
 						</li>
+						<li><%= link_to 'wiki', wiki_path %></li>
 						<li><%= link_to t('.tools'), tools_path %></li>
-						<li><%= link_to t('.about'), about_path %></li>
+
 					</ul>
 					<% if signed_in? %>
 						<ul class="nav pull-right">

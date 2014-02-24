@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
 	def tools
 	end
 
+	def wiki
+	end
+
 end
