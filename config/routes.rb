@@ -17,6 +17,11 @@ StartupDigest::Application.routes.draw do
   	member do 
   		post 'like'
   	end
+
+    collection do
+      get 'active'
+    end
+
     resources :comments, only: [:create, :edit, :update, :destroy] do
     	member do
     		post 'like'

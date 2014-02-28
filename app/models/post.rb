@@ -10,6 +10,8 @@ class Post < ActiveRecord::Base
 										uniqueness: true
 	validates :text, presence: true
 
+	scope :active, -> { where("comments_count >= ?", 5) }
+
 	def self.search(query)
 		# where(:title, query) -> This would return an exact match of the query
 		where("title like ?", "%#{query}%")

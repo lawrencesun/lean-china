@@ -73,6 +73,11 @@ class PostsController < ApplicationController
 		end			
 	end
 
+	def active
+		@posts = Post.active.order('created_at DESC').page(params[:page])
+		render action: 'index'
+	end
+
 	private
 		def find_post
 			@post = Post.find(params[:id])
