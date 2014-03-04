@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_action :find_post, only:[:show, :edit, :update, :destroy, :like]
-	before_action :require_user, except:[:index, :show]
+	before_action :require_user, except:[:index, :show, :active]
 	before_action :correct_user, only: :edit
 	before_action :admin_user, only: :destroy
 	
