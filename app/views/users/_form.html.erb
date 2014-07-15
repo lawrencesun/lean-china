@@ -1,22 +1,22 @@
 	<%= form_for @user do |f| %>
-		<div class="control-group">
+		<div class="form-group">
 			<%= f.label :username, t('username') %>
-			<%= f.text_field :username, placeholder: "username"%>
+			<%= f.text_field :username, class:"form-control", placeholder: "Pick a username"%>
 		</div>
 
-		<div class="control-group">
+		<div class="form-group">
 			<%= f.label :email, t('email') %>
-			<%= f.text_field :email, placeholder: "foo@bar.com" %>
+			<%= f.text_field :email, class:"form-control", placeholder: "foo@bar.com" %>
 		</div>
 
-		<div class="control-group">
+		<div class="form-group">
 			<%= f.label :password, t('password') %>
-			<%= f.password_field :password %>
+			<%= f.password_field :password, class:"form-control", placeholder: "At least 6 digits"%>
 		</div>
 
-		<div class="control-group">
+		<div class="form-group">
 			<%= f.label :password_confirmation, t('password_confirmation') %>
-			<%= f.password_field :password_confirmation %>
+			<%= f.password_field :password_confirmation, class:"form-control" %>
 		</div>
 		
 		<%= f.submit(@user.new_record? ? t('sign_up') : t('update'), class: "btn btn-primary") %>

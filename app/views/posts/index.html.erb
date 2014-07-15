@@ -1,11 +1,12 @@
-<h5>Lean China 是一个关于Lean Startup的学习交流社区。</h5><hr>
+
 <div class="container">
+	<h5>Lean China 是一个关于Lean Startup的学习交流社区。</h5><hr>
 	<div class="row">
-		<div class="span9">
+		<div class="col-md-9">
 			<div class="well">
 				<ol class="breadcrumb">
 				  <li class="active"><%= t('View') %>: </li>
-				  <li><%= link_to t('Active'), active_posts_path %></li> / 
+				  <li><%= link_to t('Active'), active_posts_path %></li> 
 				  <li><%= link_to t('Last'), posts_path %></li>
 				</ol>
 				<hr/>
@@ -18,10 +19,10 @@
 			</div>
 		</div>
 
-		<div class="span3">
+		<div class="col-md-3">
 			<%= render 'layouts/sidebar' %>
-			<div class="well well-small">
-				<small><strong><%= t('.statistics') %></strong><br>
+			<div class="well well-sm hidden-xs">
+				<h6><%= t('.statistics') %></h6>
 				<ul>
 					<li><%= t('.users') %>：<%= User.count %></li>
 					<li><%= t('.posts') %>：<%= Post.count %></li>
@@ -29,8 +30,8 @@
 				</ul>
 				</small>
 			</div>
-			<div class="well well-small">
-				<small><strong><%= t('links') %></small></strong><br>
+			<div class="well well-sm" style="text-align:center">
+				<h6><%= t('links') %></h6>
 				<%= link_to image_tag("rubychina.png", alt: "RubyChina", class: "links"), 'http://ruby-china.org/'%>
 			</div>
 		</div>

@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.1'
-gem 'bootstrap-sass', '2.3.2.0'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bcrypt-ruby', '3.1.2'
+gem 'autoprefixer-rails'
 
 gem 'faker', '1.1.2'
 gem 'kaminari'
@@ -18,7 +19,7 @@ group :test do
   gem 'capybara', '2.1.0'
 end
 
-gem 'sass-rails', '4.0.1'
+gem 'sass-rails', '>= 3.2'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails', '3.0.4'

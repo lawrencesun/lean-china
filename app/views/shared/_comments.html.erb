@@ -12,14 +12,14 @@
 					<header>
 						<div class="pull-right">
 							<%= link_to like_post_comment_path(comment.post, comment, like: true), method: 'post', remote: true do %>
-								<i class="icon-thumbs-up"></i>
+								<i class="glyphicon glyphicon-thumbs-up"></i>
 							<% end %>
 							<span id="comment_<%= comment.id %>_likes"><%= comment.likes.size %></span>
 
 							<% if correct_user?(comment.user) %>
 								<span>	
 									<%= link_to edit_post_comment_path(comment.post.id, comment.id) do %>
-									<i class="icon-edit"></i>
+									<i class="glyphicon glyphicon-edit"></i>
 									<% end %>
 								</span>
 							<% end %>

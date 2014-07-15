@@ -1,8 +1,9 @@
 @import "bootstrap";
-@import "bootstrap-responsive";
+@import "bootstrap-sprockets";
 
 /* universal */
 
+$blue: #61a8ff;
 
 html {
 	overflow-y: scroll;
@@ -66,6 +67,24 @@ p {
 	line-height: 1.7em;
 }
 
+h6 {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* navbar default*/
+.navbar-default {
+  background-color: #fff;
+  .navbar-nav>li>a {
+    color: $blue;
+    &:hover {
+      background-color: #e0e0e0;}
+    }
+}
+
+
 /* header */
 
 #logo {
@@ -109,6 +128,17 @@ footer {
   }
 }
 
+
+/* postinfo */
+.postinfo {
+  position: relative;
+  margin-bottom: 10px;
+  margin-right: 56px;
+  margin: -10px -10px 0;
+  padding-left: 10px;
+}
+
+
 /* forms */
 #error_explanation {
   color: #f00;
@@ -125,7 +155,15 @@ footer {
 
 /* timestamp */
 .timestamp {
-  color: $grayLight;
+  color: $gray-light;
+}
+
+/* label */
+.label {
+  padding: 1px 5px;
+  color: #778087;
+  text-decoration: none;
+  background-color: #f5f5f5;
 }
 
 /* gravatar */

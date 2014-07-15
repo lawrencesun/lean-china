@@ -1,15 +1,15 @@
 <div class="container">
 	<div class="row">
-		<div class="span9">
+		<div class="col-md-9">
 			<%= form_for [@post, @comment] do |f| %>
 				<%= render 'shared/error', object: @comment %>
-				<div class="control-group">
-					<%= f.text_area :body, rows: 10, class: "input-block-level" %>
+				<div class="form-group">
+					<%= f.text_area :body, rows: 10, class: "form-control" %>
 				</div>
 					<%= f.submit t('update'), class: "btn btn-success"%>
 			<% end %>
 		</div>
-		<div class="span3">
+		<div class="col-md-3">
 			<%= render 'shared/mdhelp' %>
 		</div>
 	</div>

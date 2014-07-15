@@ -2,19 +2,19 @@
 	<%= form_for @post do |f| %>
 		<%= render 'shared/error', object: @post %>
 		
-		<div class="control-group">
-		<%= f.label t('.title') %>
-		<%= f.text_field :title, class: "input-block-level" %>
+		<div class="form-group">
+			<%= f.label t('.title') %>
+			<%= f.text_field :title, class: "form-control" %>
 		</div>
 
-		<div class="control-group">
-		<%= f.label t('.content') %>
-		<%= f.text_area :text, rows: 10, class: "input-block-level" %>
+		<div class="form-group">
+			<%= f.label t('.content') %>
+			<%= f.text_area :text, rows: 10, class: "form-control" %>
 		</div>
 
-		<div class='control-group'>
-     <%= f.label t('.select_category') %>
-     <%= f.select :category_ids, Category.all.collect{|c| [c.name, c.id]}, {}, {multiple: false} %>
+		<div class='form-group'>
+      <%= f.label t('.select_category') %><br>
+     	<%= f.select :category_ids, Category.all.collect{|c| [c.name, c.id]}, {}, {multiple: false} %>
     </div>
 
 		<%= f.submit(@post.new_record? ? t('new_post') : t('update'), class: "btn btn-primary") %>

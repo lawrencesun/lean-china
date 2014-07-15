@@ -1,16 +1,15 @@
-<div class="well well-small">
-	<% if signed_in? %>
-		<a href="/posts/new", class="btn btn-success"> <%= t('new_post')%></a>
-	<% else %>
-		<h8><%= t('.participate')%></h8><hr>
-		<%= link_to t('sign_in'), signin_path, class: "btn btn-primary" %> |
-		<%= link_to t('sign_up'), signup_path, class: "btn btn-success" %>
+<div class="well well-sm">
+ 	<%= form_tag(posts_path, method: 'get', id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], class: "form-control input-block-level", placeholder: "search title..." %>
 	<% end %>
 </div>
 
-<div class="well well-small">
- 	<%= form_tag(posts_path, method: 'get', id: "search-form") do %>
-		<%= text_field_tag :search, params[:search], class: "form-control input-block-level", placeholder: "search title..." %>
-		<%= submit_tag t('search'), class: "btn btn-info", name: nil %>
+<div class="well well-sm" style="text-align:center">
+	<% if signed_in? %>
+		<a href="/posts/new", class="btn btn-success"> <%= t('new_post')%></a>
+	<% else %>
+		<h6><%= t('.participate')%></h6>
+		<%= link_to t('sign_in'), signin_path, class: "btn btn-primary" %>
 	<% end %>
 </div>
+

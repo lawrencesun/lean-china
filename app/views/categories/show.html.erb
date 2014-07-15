@@ -1,7 +1,7 @@
-<h4><%= @category.name %></h4><hr>
 <div class="container">
+	<h4><%= @category.name %></h4><hr>
 	<div class="row">
-		<div class="span9">
+		<div class="col-md-9">
 			<div class="well">
 				<div id="posts">
 					<%= render 'shared/posts', object: @posts %>
@@ -12,7 +12,7 @@
 			</div>
 		</div>
 
-		<div class="span3">
+		<div class="col-md-3">
 			<%= render 'layouts/sidebar' %>
 		</div>
 
