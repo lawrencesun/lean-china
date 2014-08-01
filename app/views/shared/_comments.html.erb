@@ -26,7 +26,9 @@
 									
 							<% if admin? %>
 								<span>	
-									<%= link_to 'delete', post_comment_path(comment.post.id, comment.id), method: 'delete', data: { confirm: t('confirm_delete') } %>
+									<%= link_to post_comment_path(comment.post.id, comment.id), method: 'delete', data: { confirm: t('confirm_delete') } do %>
+										<i class="fa fa-trash-o"></i>
+									<% end %>
 								</span>
 							<% end %>
 
