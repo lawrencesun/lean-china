@@ -5,4 +5,8 @@ class Comment < ActiveRecord::Base
 
 	validates :body, presence: true
 
+	def total_likes
+		self.likes.where(like: true).size
+	end
+
 end

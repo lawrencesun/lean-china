@@ -35,15 +35,17 @@ class CommentsController < ApplicationController
 	end 
 
 	def like	
-		Like.create(likeable: @comment, user: current_user, like: params[:like])
-		
-		respond_to do |format|
-			format.html do
-				flash[:success] = "Like Counted!"
-				redirect_to :back
-			end
-
+		if comment_liked  
+			@like.update(like: params[:like])
+		else 
+			Like.create(likeable: @comment, user: current_user, like: params[:like])
+			respond_to do |format|
+				format.html do
+					flash[:success] = "Like Counted!"
+					redirect_to :back
+				end
 			format.js
+			end
 		end
 	end
 
@@ -63,5 +65,9 @@ class CommentsController < ApplicationController
 		def correct_user
 			@comment = Comment.find(params[:id])
 			redirect_to @post unless correct_user?(@comment.user)
+		end
+
+		def comment_liked
+			liked?(@comment)
 		end
 end

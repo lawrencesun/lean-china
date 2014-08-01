@@ -19,11 +19,18 @@
 				<p><%= markdown(@post.text) %></p>
 
 				<span class="pull-right">
+				<% if liked!(@post) %>
+					<%= link_to like_post_path(@post, like: false), method: 'post', remote: true do %>
+						<i class="fa fa-thumbs-up"></i>
+					<% end %>	
+				<% else %>				
 					<%= link_to like_post_path(@post, like: true), method: 'post', remote: true do %>
 						<i class="fa fa-thumbs-o-up"></i>
-						<span id="post_<%= @post.id %>_likes"><%= @post.likes.size %><%= t('likes')%></span>
 					<% end %>
+				<% end %>
+						<span id="post_<%= @post.id %>_likes"><%= @post.total_likes %><%= t('likes')%></span>
 				</span>
+
 
 			</div>
 

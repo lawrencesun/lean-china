@@ -17,4 +17,8 @@ class Post < ActiveRecord::Base
 		where("title like ?", "%#{query}%")
 	end
 
+	def total_likes
+		self.likes.where(like: true).size
+	end
+
 end

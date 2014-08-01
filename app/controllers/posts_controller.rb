@@ -61,16 +61,20 @@ class PostsController < ApplicationController
 	end
 
 	def like
-		Like.create(likeable: @post, user: current_user, like: params[:like])
-		
-		respond_to do |format|
-			format.html do
-				flash[:success] = "Like Counted!"
-				redirect_to :back
-			end
+		if post_liked 
+			@like.update(like: params[:like])
+		else 
+			Like.create(likeable: @post, user: current_user, like: params[:like])
+			respond_to do |format|
+				format.html do
+					flash[:success] = "Like Counted!"
+					redirect_to :back
+				end
+				format.js
+			end			
+		end
 
-			format.js
-		end			
+		
 	end
 
 	def active
@@ -90,5 +94,9 @@ class PostsController < ApplicationController
 		def correct_user
 			@post = Post.find(params[:id])
 			redirect_to @post unless correct_user?(@post.user)
+		end
+
+		def post_liked
+			liked?(@post)
 		end
 end
