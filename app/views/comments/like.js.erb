@@ -1,1 +1,9 @@
-$("#comment_<%= @comment.id %>_likes").html("<%= @comment.total_likes %>");
+//$("#comment_<%= @comment.id %>_likes").html("<%= @comment.total_likes %>");
+
+<% if liked(@comment)%>
+	$("#user_like_comment_<%= @comment.id %>").addClass("like");
+<% else %>
+	$("#user_like_comment_<%= @comment.id %>").removeClass("like");
+<% end %>
+
+$("#comments").load("<%= @post.id %> #comments");

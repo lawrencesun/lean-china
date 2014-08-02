@@ -11,10 +11,19 @@
 				<td class="content">
 					<header>
 						<div class="pull-right">
-							<%= link_to like_post_comment_path(comment.post, comment, like: true), method: 'post', remote: true do %>
-								<i class="fa fa-thumbs-o-up"></i>
-							<% end %>
-							<span id="comment_<%= comment.id %>_likes"><%= comment.total_likes %></span>
+
+								<% if signed_in? && liked(comment) %>
+									<%= link_to like_post_comment_path(comment.post, comment, like: false), method: 'post', remote: true do %>
+										<span id="user_like_comment_<%= comment.id %>" class="like"><i class="fa fa-thumbs-o-up"></i></span>	
+									<% end %>
+								<% else %>
+									<%= link_to like_post_comment_path(comment.post, comment, like: true), method: 'post', remote: true do %>
+										<span id="user_like_comment_<%= comment.id %>"><i class="fa fa-thumbs-o-up"></i></span>	
+									<% end %>
+								<% end %>
+								<span id="comment_<%= comment.id %>_likes"><%= comment.total_likes %></span>
+
+
 
 							<% if correct_user?(comment.user) %>
 								<span>	

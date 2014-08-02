@@ -42,7 +42,7 @@ class CommentsController < ApplicationController
 		end			
 		respond_to do |format|
 			format.html do
-				flash[:success] = "Like Counted!"
+				flash[:success] = "Like Updated!"
 				redirect_to :back
 			end
 		format.js
