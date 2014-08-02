@@ -218,3 +218,11 @@ table.comments {
   text-align: right;
   font-size: 12px;
 }
+
+/* like */
+.like {
+  color: #f00;
+  &:hover {
+    color: #f00;
+  }
+}

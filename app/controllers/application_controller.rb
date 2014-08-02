@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :signed_in?, :correct_user?, :admin?, :liked?, :liked!
+  helper_method :current_user, :signed_in?, :correct_user?, :admin?, :liked?, :liked
   before_action :get_categories
 
   def current_user
@@ -42,7 +42,12 @@ class ApplicationController < ActionController::Base
     @like = Like.find_by(likeable: type, user: current_user) 
   end
 
-  def liked!(type)
-    Like.find_by(likeable: type, user: current_user).like
+  def liked(type)
+    @like = Like.find_by(likeable: type, user: current_user)
+    if @like
+      return @like.like
+    else
+      return false
+    end
   end  
 end

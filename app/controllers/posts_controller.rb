@@ -65,16 +65,14 @@ class PostsController < ApplicationController
 			@like.update(like: params[:like])
 		else 
 			Like.create(likeable: @post, user: current_user, like: params[:like])
-			respond_to do |format|
-				format.html do
-					flash[:success] = "Like Counted!"
-					redirect_to :back
-				end
-				format.js
-			end			
 		end
-
-		
+		respond_to do |format|
+			format.html do
+				flash[:success] = "Like Updated!"
+				redirect_to :back
+			end
+			format.js
+		end	
 	end
 
 	def active

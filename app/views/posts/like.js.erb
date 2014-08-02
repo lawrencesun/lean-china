@@ -1,1 +1,9 @@
-$("#post_<%= @post.id %>_likes").html("<%= @post.total_likes %>人点赞"); 
+<% if liked(@post)%>
+	$("#user_like_<%= @post.id %>").addClass("like");
+<% else %>
+	$("#user_like_<%= @post.id %>").removeClass("like");
+<% end %>
+
+//$("#post_<%= @post.id %>_likes").html("<%= @post.total_likes %><%= t('likes')%>"); 
+
+$("#post_like").load("<%= @post.id %> #post_like")
