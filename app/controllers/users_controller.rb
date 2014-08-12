@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 
 		if @user.save
-			session[:user_id] = @user.id
+			cookies[:remember_token] = @user.remember_token
 			flash[:success] = t('flash.user.create')
 			redirect_to root_path
 		else
