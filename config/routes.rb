@@ -12,7 +12,7 @@ StartupDigest::Application.routes.draw do
 	get '/search', to: 'search#index'
 
 	resources :users
-
+  resources :password_resets
   resources :posts do
   	member do 
   		post 'like'

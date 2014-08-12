@@ -86,6 +86,12 @@ zh-CN:
   sessions:
     new:
       no_account: "没有账号"
+      remember_me: "下次自动登陆"
+      forgotten_password: "忘记密码"
+
+  password_resets:
+    new:
+      password_reset: "重置密码"
 
   posts:
     index:
@@ -214,8 +220,12 @@ zh-CN:
       destroy: "该用户已删除."
       signin: "请登录."
       admin: "请联系管理员."
-
-
+    reset: 
+      email:
+        success: "重置密码邮件已发送."
+        error: "Email地址不存在."
+      success: "重置成功."
+      error: "重置链接已失效."
 
 
   errors: 
